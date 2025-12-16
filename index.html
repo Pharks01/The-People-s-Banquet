@@ -748,13 +748,11 @@
             </div>
           </div>
 
-       <!-- Implementation Timeline -->
+       <!-- Implementation Timeline – Cinematic Interactive Highway -->
 <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
   <h3 class="font-serif text-xl font-bold text-gray-900 mb-6">Implementation Timeline</h3>
 
-  <!-- Mermaid diagram wrapper -->
   <div class="mermaid-container">
-    <!-- Zoom / fullscreen controls -->
     <div class="mermaid-controls">
       <button class="mermaid-control-btn zoom-in"  title="放大"><i class="fas fa-search-plus"></i></button>
       <button class="mermaid-control-btn zoom-out" title="缩小"><i class="fas fa-search-minus"></i></button>
@@ -762,49 +760,100 @@
       <button class="mermaid-control-btn fullscreen" title="全屏查看"><i class="fas fa-expand"></i></button>
     </div>
 
-    <!-- v9-compatible timeline source -->
+    <!-- v9 source -->
     <div class="mermaid" id="timeline-chart">
       timeline
         title TPB Implementation Timeline
-
         section Phase 1 Foundation
-          Legal registration      : 2025-01-01, 2025-02-15
-          Board formation         : 2025-02-01, 2025-02-28
-          Community selection     : 2025-03-01, 2025-03-31
-          Stakeholder mapping     : 2025-03-15, 2025-04-15
-
+          Legal registration      : 2026-01-01, 2026-02-15
+          Board formation         : 2026-02-01, 2026-02-28
+          Community selection     : 2026-03-01, 2026-03-31
+          Stakeholder mapping     : 2026-03-15, 2026-04-15
         section Phase 2 Pilot Launch
-          Activity planning       : 2025-04-01, 2025-04-30
-          Partner agreements      : 2025-04-15, 2025-05-15
-          Service delivery        : 2025-05-01, 2025-08-31
-          Monitoring setup        : 2025-05-01, 2025-05-15
-
+          Activity planning       : 2026-04-01, 2026-04-30
+          Partner agreements      : 2026-04-15, 2026-05-15
+          Service delivery        : 2026-05-01, 2026-08-31
+          Monitoring setup        : 2026-05-01, 2026-05-15
         section Phase 3 Evaluation
-          Data collection         : 2025-09-01, 2025-10-31
-          Learning documentation  : 2025-10-01, 2025-11-15
-          Toolkit development     : 2025-11-01, 2025-11-30
-          Expansion planning      : 2025-11-15, 2025-12-31
+          Data collection         : 2026-09-01, 2026-10-31
+          Learning documentation  : 2026-10-01, 2026-11-15
+          Toolkit development     : 2026-11-01, 2026-11-30
+          Expansion planning      : 2026-11-15, 2026-12-31
     </div>
   </div>
 </div>
 
-<!-- force v9, render immediately -->
 <script>
-/* wipe any earlier mermaid global */
+/* ----------  v9 loader + cinematic enhancer  ---------- */
 window.mermaid = undefined;
 
 const s = document.createElement('script');
-s.src = 'https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js?x=' + Date.now();
+s.src = 'https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js?' + Date.now();
 s.onload = () => {
-  window.mermaid.initialize({startOnLoad:false, theme:'base'});
-  const el = document.getElementById('timeline-chart');
-  if(!el) return;
-  el.classList.remove('mermaid');
-  void el.offsetWidth;
-  el.classList.add('mermaid');
-  window.mermaid.init(undefined, el);
+  mermaid.initialize({startOnLoad: false, theme: 'base'});
+  const chart = document.getElementById('timeline-chart');
+  chart.classList.remove('mermaid');
+  void chart.offsetWidth;
+  chart.classList.add('mermaid');
+  mermaid.init(undefined, chart).then(() => cinematicTimeline());
 };
 document.head.appendChild(s);
+
+function cinematicTimeline() {
+  const svg   = document.querySelector('#timeline-chart svg');
+  if (!svg) return setTimeout(cinematicTimeline, 100);
+
+  /* ---- colour per phase ---- */
+  const colours = {
+    'Phase 1 Foundation': '#00b4d8',
+    'Phase 2 Pilot Launch': '#ffb703',
+    'Phase 3 Evaluation': '#06d6a0'
+  };
+  svg.querySelectorAll('.section').forEach(sec => {
+    const title = sec.querySelector('.section-title')?.textContent.trim();
+    const color = colours[title] || '#888';
+    sec.querySelectorAll('.section-item').forEach(item => {
+      item.style.fill = color;
+      item.style.cursor = 'pointer';
+      const txt  = item.querySelector('.section-item-title')?.textContent || '';
+      const date = item.querySelector('.section-item-date')?.textContent || '';
+
+      /* ---- hover card ---- */
+      item.addEventListener('mouseenter', e => {
+        const card = document.createElement('div');
+        card.innerHTML = `<strong>${txt}</strong><br>${date}`;
+        card.id = 'ttl-hover';
+        card.style.cssText = 'position:fixed;top:'+(e.clientY+10)+'px;left:'+(e.clientX+10)+'px;background:#fff;border:1px solid #ccc;border-radius:4px;padding:6px 10px;font-size:12px;color:#212529;box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:1000';
+        document.body.appendChild(card);
+      });
+      item.addEventListener('mouseleave', () => document.getElementById('ttl-hover')?.remove());
+
+      /* ---- click to lock ---- */
+      item.addEventListener('click', e => {
+        const card = document.createElement('div');
+        card.innerHTML = `<strong>${txt}</strong><br>${date}<br><button onclick="this.parentElement.remove()" style="margin-top:4px;padding:2px 6px;font-size:11px">Close</button>`;
+        card.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:1px solid #ccc;border-radius:6px;padding:10px 14px;font-size:13px;color:#212529;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:2000';
+        document.body.appendChild(card);
+      });
+    });
+  });
+
+  /* ---- zoom & pan ---- */
+  let scale = 1, tx = 0, ty = 0;
+  const wrap = svg.closest('.mermaid-container');
+  const controls = wrap.querySelectorAll('.mermaid-control-btn');
+  controls[0].onclick = () => { scale = Math.min(scale * 1.2, 3); apply(); };
+  controls[1].onclick = () => { scale = Math.max(scale / 1.2, 0.4); apply(); };
+  controls[2].onclick = () => { scale = 1; tx = 0; ty = 0; apply(); };
+  controls[3].onclick = () => wrap.requestFullscreen();
+
+  function apply() { svg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`; svg.style.transformOrigin = 'top left'; }
+
+  let pan = false, startX, startY;
+  svg.addEventListener('mousedown', e => { pan = true; startX = e.clientX - tx; startY = e.clientY - ty; });
+  window.addEventListener('mousemove', e => { if (!pan) return; tx = e.clientX - startX; ty = e.clientY - startY; apply(); });
+  window.addEventListener('mouseup', () => pan = false);
+}
 </script>
 
           <!-- Scaling Strategy -->

@@ -1,0 +1,1955 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The People&#39;s Banquet: A Faith-Based Non-Profit Inception Package</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        /* Global styles */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        /* Mermaid diagram styles */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Ensure mermaid text has good contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            fill: #ffffff !important;
+            stroke: #374151 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node .label,
+        .mermaid .nodeLabel {
+            color: #1f2937 !important;
+            font-weight: 500 !important;
+            font-size: 13px !important;
+        }
+        
+        /* Different node colors for better contrast */
+        .mermaid .node:nth-child(4n+1) rect,
+        .mermaid .node:nth-child(4n+1) circle,
+        .mermaid .node:nth-child(4n+1) ellipse,
+        .mermaid .node:nth-child(4n+1) polygon {
+            fill: #f0f9ff !important;
+            stroke: #0369a1 !important;
+        }
+        
+        .mermaid .node:nth-child(4n+2) rect,
+        .mermaid .node:nth-child(4n+2) circle,
+        .mermaid .node:nth-child(4n+2) ellipse,
+        .mermaid .node:nth-child(4n+2) polygon {
+            fill: #f0fdf4 !important;
+            stroke: #16a34a !important;
+        }
+        
+        .mermaid .node:nth-child(4n+3) rect,
+        .mermaid .node:nth-child(4n+3) circle,
+        .mermaid .node:nth-child(4n+3) ellipse,
+        .mermaid .node:nth-child(4n+3) polygon {
+            fill: #fefce8 !important;
+            stroke: #ca8a04 !important;
+        }
+        
+        .mermaid .node:nth-child(4n+4) rect,
+        .mermaid .node:nth-child(4n+4) circle,
+        .mermaid .node:nth-child(4n+4) ellipse,
+        .mermaid .node:nth-child(4n+4) polygon {
+            fill: #fdf2f8 !important;
+            stroke: #be185d !important;
+        }
+        
+        /* Edge styling */
+        .mermaid .edgePath .path {
+            stroke: #6b7280 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            color: #374151 !important;
+            font-weight: 500 !important;
+            font-size: 12px !important;
+        }
+        
+        /* Timeline specific styling */
+        .mermaid .timeline-section {
+            fill: #f8fafc !important;
+            stroke: #64748b !important;
+        }
+        
+        .mermaid .timeline-section text {
+            fill: #374151 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Gantt chart specific styling */
+        .mermaid .section0 {
+            fill: #dbeafe !important;
+        }
+        
+        .mermaid .section1 {
+            fill: #dcfce7 !important;
+        }
+        
+        .mermaid .section2 {
+            fill: #fef3c7 !important;
+        }
+        
+        .mermaid .section3 {
+            fill: #fce7f3 !important;
+        }
+        
+        /* Responsive adjustments for mermaid controls */
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+        
+        /* Responsive adjustments for small screens */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .max-w-7xl {
+                max-width: 100%;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-grid img {
+                height: auto;
+                max-height: 300px;
+            }
+            
+            .grid-cols-1, .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .mermaid-container {
+                padding: 15px;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-gray-50 font-sans text-gray-900 leading-relaxed">
+    <!-- Toggle button for mobile -->
+    <button id="toc-toggle" class="fixed top-4 left-4 z-50 p-2 bg-amber-600 text-white rounded-lg shadow-lg md:hidden">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Fixed Table of Contents -->
+    <nav id="toc" class="fixed left-0 top-0 h-full w-80 bg-white shadow-xl z-40 overflow-y-auto border-r border-gray-200 transform -translate-x-full md:translate-x-0 md:block transition-transform duration-300">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="font-serif text-xl font-bold text-amber-900">Table of Contents</h2>
+          <button id="toc-close" class="md:hidden text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="#hero" class="block py-2 px-3 text-amber-700 hover:bg-amber-50 rounded transition-colors">Cover</a>
+          </li>
+          <li>
+            <a href="#executive-summary" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Executive Summary</a>
+          </li>
+          <li>
+            <a href="#mission-vision" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Mission, Vision &amp; Values</a>
+          </li>
+          <li>
+            <a href="#organizational-structure" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Organizational Structure</a>
+          </li>
+          <li>
+            <a href="#program-design" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Program Design</a>
+          </li>
+          <li>
+            <a href="#financial-plan" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Financial Plan</a>
+          </li>
+          <li>
+            <a href="#risk-assessment" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Risk Assessment</a>
+          </li>
+          <li>
+            <a href="#stakeholder-engagement" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Stakeholder Engagement</a>
+          </li>
+          <li>
+            <a href="#appendices" class="block py-2 px-3 text-gray-700 hover:bg-amber-50 rounded transition-colors">Appendices</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="ml-0 md:ml-80">
+      <!-- Hero Section -->
+      <section id="hero" class="relative bg-gradient-to-br from-amber-50 to-stone-100 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <!-- Hero Grid Layout -->
+          <div class="hero-grid grid md:grid-cols-12 gap-8 items-center">
+            <!-- Left Column - Title and Blurb -->
+            <div class="md:col-span-8">
+              <div class="space-y-6">
+                <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-amber-900 leading-tight">
+                  <em class="italic">The People&#39;s Banquet</em>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 font-light leading-relaxed max-w-3xl">
+                  A Faith-Based Non-Profit Inception Package rooted in divine calling,
+                  serving the vulnerable across Africa through compassion, justice,
+                  stewardship, and empowerment.
+                </p>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
+                  <span class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Pilot: Nigeria
+                  </span>
+                  <span class="flex items-center">
+                    <i class="fas fa-globe-africa mr-2"></i>
+                    Scale: Africa
+                  </span>
+                  <span class="flex items-center">
+                    <i class="fas fa-heart mr-2"></i>
+                    Faith-Based
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column - Visual Element -->
+            <div class="md:col-span-4 mt-8 md:mt-0">
+              <div class="relative">
+                <img src="https://kimi-web-img.moonshot.cn/img/africanfoodsystems.org/33df32f2d36fecb59b3f7b5f3401e3d682f2bce9.jpg" alt="Community sharing food together in African setting" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl" size="medium" aspect="wide" style="photo" query="African community sharing food" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-amber-900/20 to-transparent rounded-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="py-12 md:py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-8">Executive Summary</h2>
+
+          <div class="prose prose-lg max-w-none">
+            <div class="bg-amber-50 border-l-4 border-amber-600 p-6 mb-8 rounded-r-lg">
+              <h3 class="font-serif text-xl font-semibold text-amber-900 mb-4">Foundational Vision and Call</h3>
+              <p class="text-gray-700 leading-relaxed">
+                The inception of &#34;THE PEOPLE&#39;S BANQUET&#34; (TPB) is rooted in a profound spiritual calling,
+                described by its founder as a <strong>&#34;clear vision from God.&#34;</strong> This foundational
+                statement positions the organization not merely as a social enterprise but as a divinely
+                ordained mission, guiding its entire operational philosophy and strategic direction.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-semibold text-gray-900 mb-3">
+                  <i class="fas fa-heart text-amber-600 mr-2"></i>
+                  Core Biblical Principles
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li><strong>Compassion:</strong> Serving with love and mercy</li>
+                  <li><strong>Justice:</strong> Addressing root causes of poverty</li>
+                  <li><strong>Stewardship:</strong> Wise resource management</li>
+                  <li><strong>Empowerment:</strong> Building capacity and self-reliance</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-semibold text-gray-900 mb-3">
+                  <i class="fas fa-chart-line text-amber-600 mr-2"></i>
+                  Strategic Approach
+                </h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li><strong>Pilot Program:</strong> Test and refine in Nigeria</li>
+                  <li><strong>Scaling Strategy:</strong> Adapt across Africa</li>
+                  <li><strong>Partnership Model:</strong> Local collaboration</li>
+                  <li><strong>Impact Measurement:</strong> Rigorous evaluation</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Key Objectives Table -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm mb-8">
+              <div class="bg-amber-600 text-white px-6 py-4">
+                <h4 class="font-serif text-lg font-semibold">Key Objectives and Impact Goals (Years 1-5)</h4>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-6 py-3 text-left font-semibold text-gray-900">Objective Category</th>
+                      <th class="px-6 py-3 text-left font-semibold text-gray-900">Key Objectives</th>
+                      <th class="px-6 py-3 text-left font-semibold text-gray-900">Impact Goals</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-6 py-4 font-medium text-amber-700">Immediate Relief</td>
+                      <td class="px-6 py-4 text-gray-700">Provide regular meals and emergency assistance</td>
+                      <td class="px-6 py-4 text-gray-700">
+                        <strong>Serve 500,000 meals</strong> to 10,000 beneficiaries
+                        <br/>
+                        Distribute 2,000 emergency relief packages
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="px-6 py-4 font-medium text-green-700">Sustainable Development</td>
+                      <td class="px-6 py-4 text-gray-700">Vocational training and micro-enterprise support</td>
+                      <td class="px-6 py-4 text-gray-700">
+                        <strong>Train 1,000 individuals</strong> (60% placement rate)
+                        <br/>
+                        <strong>Launch 200 micro-enterprises</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 font-medium text-blue-700">Systemic Change</td>
+                      <td class="px-6 py-4 text-gray-700">Advocacy and capacity building</td>
+                      <td class="px-6 py-4 text-gray-700">
+                        <strong>Engage in 5 policy campaigns</strong>
+                        <br/>
+                        <strong>Partner with 20 local organizations</strong>
+                        <br/>
+                        <strong>Mobilize 500 volunteers</strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission, Vision, and Core Values -->
+      <section id="mission-vision" class="py-12 md:py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Mission, Vision, and Core Values</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Mission -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-compass text-amber-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900">Mission</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                To follow the example of Jesus Christ by working with the poor and oppressed to promote human transformation, seek justice, and bear witness to the good news of the Kingdom of God.
+              </p>
+              <blockquote class="border-l-4 border-amber-600 pl-4 italic text-gray-600 text-sm">
+                &#34;He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God.&#34;
+                <cite class="block text-xs mt-2 not-italic">— Micah 6:8</cite>
+              </blockquote>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-eye text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900">Vision</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                To see a transformed Africa where every individual experiences the fullness of life that God intends—communities where justice, peace, and human dignity are held sacred.
+              </p>
+              <blockquote class="border-l-4 border-blue-600 pl-4 italic text-gray-600 text-sm">
+                &#34;The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full.&#34;
+                <cite class="block text-xs mt-2 not-italic">— John 10:10</cite>
+              </blockquote>
+            </div>
+
+            <!-- Core Values -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-gem text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900">Core Values</h3>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <i class="fas fa-heart text-red-500 mr-3"></i>
+                  <span class="font-medium text-gray-900">Compassion</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-balance-scale text-blue-500 mr-3"></i>
+                  <span class="font-medium text-gray-900">Justice</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-coins text-amber-500 mr-3"></i>
+                  <span class="font-medium text-gray-900">Stewardship</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-rocket text-purple-500 mr-3"></i>
+                  <span class="font-medium text-gray-900">Empowerment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed Values Explanation -->
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Biblical Foundation of Core Values</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-amber-700 mb-3 flex items-center">
+                  <i class="fas fa-heart mr-2"></i> Compassion: Serving with Love and Mercy
+                </h4>
+                <p class="text-gray-700 text-sm mb-3">
+                  Compassion moves beyond sympathy to action, reflecting God&#39;s heart for the vulnerable.
+                  It involves treating each person with dignity and creating safe spaces for healing.
+                </p>
+                <blockquote class="text-xs text-gray-600 italic border-l-2 border-gray-300 pl-3">
+                  &#34;Clothe yourselves with compassion&#34; — Colossians 3:12
+                </blockquote>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-blue-700 mb-3 flex items-center">
+                  <i class="fas fa-balance-scale mr-2"></i> Justice: Upholding Fairness
+                </h4>
+                <p class="text-gray-700 text-sm mb-3">
+                  Justice addresses root causes of poverty, advocates for fair policies, and challenges
+                  unjust systems that perpetuate suffering and inequality.
+                </p>
+                <blockquote class="text-xs text-gray-600 italic border-l-2 border-gray-300 pl-3">
+                  &#34;Loose the chains of injustice&#34; — Isaiah 58:6
+                </blockquote>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-green-700 mb-3 flex items-center">
+                  <i class="fas fa-coins mr-2"></i> Stewardship: Managing Resources Wisely
+                </h4>
+                <p class="text-gray-700 text-sm mb-3">
+                  Stewardship recognizes that all resources are gifts from God, requiring wise management
+                  with integrity, transparency, and accountability.
+                </p>
+                <blockquote class="text-xs text-gray-600 italic border-l-2 border-gray-300 pl-3">
+                  Parable of the Talents — Matthew 25:14-30
+                </blockquote>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-purple-700 mb-3 flex items-center">
+                  <i class="fas fa-rocket mr-2"></i> Empowerment: Building Capacity
+                </h4>
+                <p class="text-gray-700 text-sm mb-3">
+                  Empowerment focuses on developing self-reliance, equipping individuals and communities
+                  with tools, skills, and confidence for transformation.
+                </p>
+                <blockquote class="text-xs text-gray-600 italic border-l-2 border-gray-300 pl-3">
+                  &#34;Use your gifts to serve others&#34; — 1 Peter 4:10
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizational Structure -->
+      <section id="organizational-structure" class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Organizational Structure and Governance</h2>
+
+          <!-- Governance Model Overview -->
+          <div class="bg-stone-50 p-8 rounded-xl mb-12">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Christ-Centered Governance Model</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-users text-amber-600 text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-2">Board of Directors</h4>
+                <p class="text-sm text-gray-600">Strategic oversight and fiduciary responsibility</p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-user-tie text-blue-600 text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-2">Leadership Team</h4>
+                <p class="text-sm text-gray-600">Daily operations and program implementation</p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-hands-helping text-green-600 text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-gray-900 mb-2">Staff &amp; Volunteers</h4>
+                <p class="text-sm text-gray-600">Program delivery and community engagement</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Organizational Chart -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
+            <h3 class="font-serif text-xl font-bold text-gray-900 mb-6">Organizational Hierarchy</h3>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid" id="org-chart">
+                graph TD
+                A[&#34;Board of Directors
+                <br/>Governance &amp; Strategy&#34;] --&gt; B[&#34;Executive Director
+                <br/>Chief Executive&#34;]
+                B --&gt; C[&#34;Director of Programs
+                <br/>Program Implementation&#34;]
+                B --&gt; D[&#34;Director of Finance
+                <br/>Financial Management&#34;]
+                B --&gt; E[&#34;Director of Development
+                <br/>Fundraising &amp; Partnerships&#34;]
+                B --&gt; F[&#34;Director of Communications
+                <br/>External Relations&#34;]
+                C --&gt; G[&#34;Program Staff
+                <br/>Field Operations&#34;]
+                D --&gt; H[&#34;Finance Staff
+                <br/>Accounting &amp; Admin&#34;]
+                E --&gt; I[&#34;Development Staff
+                <br/>Donor Relations&#34;]
+                F --&gt; J[&#34;Communications Staff
+                <br/>Media &amp; Outreach&#34;]
+
+                style A fill:#fef3c7,stroke:#d97706,stroke-width:3px,color:#1f2937
+                style B fill:#dbeafe,stroke:#2563eb,stroke-width:3px,color:#1f2937
+                style C fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#1f2937
+                style D fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#1f2937
+                style E fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#1f2937
+                style F fill:#dcfce7,stroke:#16a34a,stroke-width:3px,color:#1f2937
+                style G fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1f2937
+                style H fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1f2937
+                style I fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1f2937
+                style J fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1f2937
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Leadership Positions -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-serif text-xl font-bold text-gray-900 mb-4">Board of Directors Responsibilities</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-amber-500 mr-2 mt-1"></i>
+                  Provide strategic direction and oversight
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-amber-500 mr-2 mt-1"></i>
+                  Ensure financial accountability and sustainability
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-amber-500 mr-2 mt-1"></i>
+                  Hire and evaluate Executive Director
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-amber-500 mr-2 mt-1"></i>
+                  Serve as ambassadors for TPB&#39;s mission
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-amber-500 mr-2 mt-1"></i>
+                  Maintain highest standards of integrity
+                </li>
+              </ul>
+              <blockquote class="mt-4 text-xs text-gray-600 italic border-l-2 border-gray-300 pl-3">
+                &#34;Be shepherds of God&#39;s flock... not lording it over those entrusted to you, but being examples to the flock&#34;
+                <cite class="block text-xs mt-1">— 1 Peter 5:2-3</cite>
+              </blockquote>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-serif text-xl font-bold text-gray-900 mb-4">Leadership Team Structure</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-user-tie text-blue-500 mr-2 mt-1"></i>
+                  <strong>Executive Director:</strong> Overall leadership and management
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-cogs text-green-500 mr-2 mt-1"></i>
+                  <strong>Program Director:</strong> Program design and implementation
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-chart-line text-purple-500 mr-2 mt-1"></i>
+                  <strong>Development Director:</strong> Fundraising and partnerships
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-calculator text-amber-500 mr-2 mt-1"></i>
+                  <strong>Finance Director:</strong> Financial management and reporting
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-bullhorn text-red-500 mr-2 mt-1"></i>
+                  <strong>Communications Director:</strong> External relations and messaging
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Program Design and Implementation -->
+      <section id="program-design" class="py-12 md:py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Program Design and Implementation</h2>
+
+          <!-- Pilot Program Overview -->
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-12">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Pilot Program in Nigeria</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Target Beneficiaries</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>• Families in extreme poverty</li>
+                  <li>• Orphaned and vulnerable children</li>
+                  <li>• Women and girls at risk</li>
+                  <li>• Elderly and disabled individuals</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Program Activities</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>• Food security and nutrition</li>
+                  <li>• Education and child development</li>
+                  <li>• Health and wellness services</li>
+                  <li>• Economic empowerment</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Partnership Strategy</h4>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>• Local churches and faith groups</li>
+                  <li>• Community-based organizations</li>
+                  <li>• Government agencies</li>
+                  <li>• International supporters</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        <!-- Implementation Timeline -->
+<div class="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
+  <h3 class="font-serif text-xl font-bold text-gray-900 mb-6">Implementation Timeline</h3>
+
+  <!-- Mermaid diagram wrapper -->
+  <div class="mermaid-container">
+    <!-- Zoom / fullscreen controls -->
+    <div class="mermaid-controls">
+      <button class="mermaid-control-btn zoom-in"  title="放大"><i class="fas fa-search-plus"></i></button>
+      <button class="mermaid-control-btn zoom-out" title="缩小"><i class="fas fa-search-minus"></i></button>
+      <button class="mermaid-control-btn reset-zoom" title="重置"><i class="fas fa-expand-arrows-alt"></i></button>
+      <button class="mermaid-control-btn fullscreen" title="全屏查看"><i class="fas fa-expand"></i></button>
+    </div>
+
+    <!-- Actual Mermaid source -->
+    <div class="mermaid" id="timeline-chart">
+      timeline
+        title TPB Implementation Timeline
+
+        section Phase 1 Foundation
+          Legal registration      :done,  p1a, 2025-01-01, 2025-02-15
+          Board formation         :done,  p1b, 2025-02-01, 2025-02-28
+          Community selection     :active,p1c, 2025-03-01, 2025-03-31
+          Stakeholder mapping     :       p1d, 2025-03-15, 2025-04-15
+
+        section Phase 2 Pilot Launch
+          Activity planning       :p2a, 2025-04-01, 2025-04-30
+          Partner agreements      :p2b, 2025-04-15, 2025-05-15
+          Service delivery        :p2c, 2025-05-01, 2025-08-31
+          Monitoring setup        :p2d, 2025-05-01, 2025-05-15
+
+        section Phase 3 Evaluation
+          Data collection         :p3a, 2025-09-01, 2025-10-31
+          Learning documentation  :p3b, 2025-10-01, 2025-11-15
+          Toolkit development     :p3c, 2025-11-01, 2025-11-30
+          Expansion planning      :p3d, 2025-11-15, 2025-12-31
+    </div>
+  </div>
+</div>
+
+          <!-- Scaling Strategy -->
+          <div class="bg-amber-50 p-8 rounded-xl">
+            <h3 class="font-serif text-2xl font-bold text-amber-900 mb-6">Scaling Strategy Across Africa</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Key Principles</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                      <span class="text-white text-sm font-bold">1</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900">Adapt to Local Contexts</h5>
+                      <p class="text-sm text-gray-700">Flexible program model responsive to community needs</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                      <span class="text-white text-sm font-bold">2</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900">Local Ownership</h5>
+                      <p class="text-sm text-gray-700">Empower local partners for sustainable impact</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                      <span class="text-white text-sm font-bold">3</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900">Diversified Funding</h5>
+                      <p class="text-sm text-gray-700">Multiple revenue streams for financial stability</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Implementation Approach</h4>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="space-y-3">
+                    <div class="flex items-center">
+                      <i class="fas fa-map-marker-alt text-amber-600 mr-3"></i>
+                      <span class="text-sm text-gray-700">Phase 2: West Africa expansion</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-network-wired text-blue-600 mr-3"></i>
+                      <span class="text-sm text-gray-700">Regional hub development</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-graduation-cap text-green-600 mr-3"></i>
+                      <span class="text-sm text-gray-700">Training and capacity building</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-share-alt text-purple-600 mr-3"></i>
+                      <span class="text-sm text-gray-700">Knowledge sharing network</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Financial Plan -->
+      <section id="financial-plan" class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Financial Plan and Stewardship</h2>
+
+          <!-- Financial Overview -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-stone-50 p-6 rounded-xl text-center">
+              <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-seedling text-amber-600 text-2xl"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Startup Funding</h3>
+              <p class="text-3xl font-bold text-amber-600 mb-2">$150,000</p>
+              <p class="text-sm text-gray-600">Initial registration, setup, and launch costs</p>
+            </div>
+
+            <div class="bg-stone-50 p-6 rounded-xl text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-chart-pie text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Annual Budget</h3>
+              <p class="text-3xl font-bold text-blue-600 mb-2">$500,000</p>
+              <p class="text-sm text-gray-600">First year operational expenses in Nigeria</p>
+            </div>
+
+            <div class="bg-stone-50 p-6 rounded-xl text-center">
+              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-percentage text-green-600 text-2xl"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Program Allocation</h3>
+              <p class="text-3xl font-bold text-green-600 mb-2">85%</p>
+              <p class="text-sm text-gray-600">Direct program service commitment</p>
+            </div>
+          </div>
+
+          <!-- Revenue Streams -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
+            <h3 class="font-serif text-xl font-bold text-gray-900 mb-6">Diversified Revenue Streams</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-user-friends text-blue-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Individual Donations</h4>
+                  <p class="text-sm text-gray-600">Direct mail, online giving, events</p>
+                </div>
+              </div>
+              <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-building text-purple-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Foundation Grants</h4>
+                  <p class="text-sm text-gray-600">Faith-based and development foundations</p>
+                </div>
+              </div>
+              <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-university text-green-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Government Grants</h4>
+                  <p class="text-sm text-gray-600">Food security, education, development</p>
+                </div>
+              </div>
+              <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-handshake text-amber-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Corporate Partnerships</h4>
+                  <p class="text-sm text-gray-600">CSR initiatives and sponsorships</p>
+                </div>
+              </div>
+              <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-church text-red-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Church Partnerships</h4>
+                  <p class="text-sm text-gray-600">Global missions and volunteer support</p>
+                </div>
+              </div>
+              <div class="flex items-center p-4 bg-amber-50 rounded-lg">
+                <i class="fas fa-plus-circle text-amber-700 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Additional Sources</h4>
+                  <p class="text-sm text-gray-600">Special campaigns and initiatives</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financial Management Principles -->
+          <div class="bg-amber-50 p-8 rounded-xl">
+            <h3 class="font-serif text-2xl font-bold text-amber-900 mb-6">Biblical Principles of Financial Stewardship</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Core Principles</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="fas fa-bible text-amber-600 mr-3 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900">God&#39;s Ownership</h5>
+                      <p class="text-sm text-gray-700">All resources belong to God; we are His stewards</p>
+                      <p class="text-xs text-gray-600 italic mt-1">&#34;The earth is the Lord&#39;s&#34; — Psalm 24:1</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-shield-alt text-blue-600 mr-3 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900">Dual Accountability</h5>
+                      <p class="text-sm text-gray-700">Accountable to God and transparent to people</p>
+                      <p class="text-xs text-gray-600 italic mt-1">&#34;Do what is right... in the eyes of the Lord and man&#34; — 2 Corinthians 8:21</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-hand-holding-heart text-green-600 mr-3 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900">Generous Spirit</h5>
+                      <p class="text-sm text-gray-700">Cultivating cheerful and willing giving</p>
+                      <p class="text-xs text-gray-600 italic mt-1">&#34;God loves a cheerful giver&#34; — 2 Corinthians 9:7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Practical Implementation</h4>
+                <div class="bg-white p-4 rounded-lg space-y-3">
+                  <div class="flex items-center">
+                    <i class="fas fa-file-invoice-dollar text-amber-600 mr-3"></i>
+                    <span class="text-sm text-gray-700">Annual audited financial statements</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                    <span class="text-sm text-gray-700">ECFA and GuideStar accreditation</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-lock text-green-600 mr-3"></i>
+                    <span class="text-sm text-gray-700">Comprehensive internal controls</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-piggy-bank text-purple-600 mr-3"></i>
+                    <span class="text-sm text-gray-700">Emergency fund for financial stability</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-chart-line text-red-600 mr-3"></i>
+                    <span class="text-sm text-gray-700">Regular financial reporting to stakeholders</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risk Assessment -->
+      <section id="risk-assessment" class="py-12 md:py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Risk Assessment and Mitigation</h2>
+
+          <!-- Risk Categories Overview -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-gray-900">Operational Risks</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Staff turnover and retention</li>
+                <li>• Program disruption</li>
+                <li>• Partnership failures</li>
+                <li>• Inadequate monitoring</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-dollar-sign text-yellow-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-gray-900">Financial Risks</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Funding shortfalls</li>
+                <li>• Currency fluctuations</li>
+                <li>• Fraud and mismanagement</li>
+                <li>• Economic downturn impact</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-shield-alt text-orange-600 text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-gray-900">Security Risks</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Civil unrest and conflict</li>
+                <li>• Kidnapping and banditry</li>
+                <li>• Terrorism threats</li>
+                <li>• Health crises and outbreaks</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Risk Mitigation Strategies -->
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Comprehensive Risk Mitigation Framework</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                  Proactive Risk Management
+                </h4>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <i class="fas fa-file-contract text-blue-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Comprehensive Policies</h5>
+                      <p class="text-xs text-gray-600">Clear financial, HR, and procurement policies</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-search text-purple-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Due Diligence</h5>
+                      <p class="text-xs text-gray-600">Thorough vetting of staff and partners</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-graduation-cap text-amber-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Regular Training</h5>
+                      <p class="text-xs text-gray-600">Security protocols and ethical conduct</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-network-wired text-green-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Diversification</h5>
+                      <p class="text-xs text-gray-600">Multiple funding sources and locations</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <i class="fas fa-clipboard-list text-blue-600 mr-2"></i>
+                  Contingency Planning
+                </h4>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-red-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Security Incidents</h5>
+                      <p class="text-xs text-gray-600">Emergency evacuation and communication plans</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-piggy-bank text-amber-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Financial Crises</h5>
+                      <p class="text-xs text-gray-600">Emergency fund and program prioritization</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-heartbeat text-blue-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Health Emergencies</h5>
+                      <p class="text-xs text-gray-600">Infection control and remote work protocols</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-pause-circle text-purple-500 mr-2 mt-1"></i>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Program Disruption</h5>
+                      <p class="text-xs text-gray-600">Alternative delivery methods and partner networks</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Insurance and Legal -->
+          <div class="bg-amber-50 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-amber-900 mb-4">Insurance and Legal Protection</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="flex items-center">
+                <i class="fas fa-umbrella text-blue-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Comprehensive Insurance</h4>
+                  <p class="text-sm text-gray-700">Liability, property, and K&amp;R coverage</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-balance-scale text-green-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Legal Compliance</h4>
+                  <p class="text-sm text-gray-700">Local registration and regulatory adherence</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-file-contract text-purple-600 text-2xl mr-4"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Clear Agreements</h4>
+                  <p class="text-sm text-gray-700">MOUs with all partners and stakeholders</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stakeholder Engagement -->
+      <section id="stakeholder-engagement" class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Stakeholder Engagement and Partnerships</h2>
+
+          <!-- Stakeholder Groups -->
+          <div class="bg-stone-50 p-8 rounded-xl mb-12">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-8">Key Stakeholder Groups</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-users text-amber-600 text-2xl mr-3"></i>
+                  <h4 class="font-semibold text-gray-900">Beneficiaries &amp; Communities</h4>
+                </div>
+                <p class="text-sm text-gray-700 mb-3">Direct service recipients and local communities</p>
+                <div class="text-xs text-gray-600">
+                  <p><strong>Interests:</strong> Quality services, dignity, participation</p>
+                  <p><strong>Approach:</strong> Participatory assessments, feedback mechanisms</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-landmark text-blue-600 text-2xl mr-3"></i>
+                  <h4 class="font-semibold text-gray-900">Government &amp; Regulatory</h4>
+                </div>
+                <p class="text-sm text-gray-700 mb-3">Local, state, and national government bodies</p>
+                <div class="text-xs text-gray-600">
+                  <p><strong>Interests:</strong> Compliance, transparency, alignment</p>
+                  <p><strong>Approach:</strong> Regular communication, coordination forums</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-church text-green-600 text-2xl mr-3"></i>
+                  <h4 class="font-semibold text-gray-900">Faith-Based Organizations</h4>
+                </div>
+                <p class="text-sm text-gray-700 mb-3">Churches and religious institutions</p>
+                <div class="text-xs text-gray-600">
+                  <p><strong>Interests:</strong> Values alignment, collaboration</p>
+                  <p><strong>Approach:</strong> Partnership development, volunteer opportunities</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership Strategy -->
+          <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8 shadow-sm">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Strategic Partnership Framework</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <i class="fas fa-hands-helping text-amber-600 mr-2"></i>
+                  Local NGOs
+                </h4>
+                <p class="text-sm text-gray-700 mb-4">Collaboration with community-based organizations for local expertise and sustainability.</p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li>• Mutual respect and shared learning</li>
+                  <li>• Formal MOUs and agreements</li>
+                  <li>• Capacity building support</li>
+                  <li>• Resource sharing and coordination</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <i class="fas fa-globe text-blue-600 mr-2"></i>
+                  International Donors
+                </h4>
+                <p class="text-sm text-gray-700 mb-4">Engagement with governments, foundations, and multilateral organizations for scaling impact.</p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li>• Strategic donor relationship management</li>
+                  <li>• High-quality proposal development</li>
+                  <li>• Regular progress reporting</li>
+                  <li>• Impact demonstration and transparency</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <i class="fas fa-network-wired text-green-600 mr-2"></i>
+                  Strategic Alliances
+                </h4>
+                <p class="text-sm text-gray-700 mb-4">Alliances with academic, private sector, and research institutions for innovation and expertise.</p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li>• Research and evaluation partnerships</li>
+                  <li>• Technology and innovation collaboration</li>
+                  <li>• Knowledge sharing and learning networks</li>
+                  <li>• Collective impact initiatives</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engagement Approach -->
+          <div class="bg-amber-50 p-8 rounded-xl">
+            <h3 class="font-serif text-2xl font-bold text-amber-900 mb-6">Collaborative Engagement Principles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Core Engagement Values</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <i class="fas fa-heart text-red-500 mr-3"></i>
+                    <span class="text-sm text-gray-700"><strong>Compassion:</strong> Respectful and dignified relationships</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-balance-scale text-blue-500 mr-3"></i>
+                    <span class="text-sm text-gray-700"><strong>Justice:</strong> Fair and equitable partnerships</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-coins text-amber-500 mr-3"></i>
+                    <span class="text-sm text-gray-700"><strong>Stewardship:</strong> Responsible resource management</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-rocket text-purple-500 mr-3"></i>
+                    <span class="text-sm text-gray-700"><strong>Empowerment:</strong> Building local capacity and leadership</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Implementation Methods</h4>
+                <div class="space-y-4">
+                  <div class="bg-white p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Participatory Approach</h5>
+                    <p class="text-sm text-gray-700">Involving stakeholders in program design, implementation, and evaluation</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Transparent Communication</h5>
+                    <p class="text-sm text-gray-700">Regular updates, feedback mechanisms, and open dialogue</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Mutual Benefit</h5>
+                    <p class="text-sm text-gray-700">Creating shared value and reciprocal relationships</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appendices -->
+      <section id="appendices" class="py-12 md:py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-amber-900 mb-12">Appendices</h2>
+
+          <!-- Scriptural References -->
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-12">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-8">Scriptural Foundation</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Compassion Verses -->
+              <div>
+                <h4 class="font-semibold text-red-700 mb-4 flex items-center">
+                  <i class="fas fa-heart mr-2"></i>
+                  Verses on Compassion
+                </h4>
+                <div class="space-y-3">
+                  <blockquote class="border-l-4 border-red-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Therefore, as God&#39;s chosen people, holy and dearly loved, clothe yourselves with compassion...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Colossians 3:12</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-red-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;For I was hungry and you gave me food, I was thirsty and you gave me something to drink...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Matthew 25:35</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-red-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Be kind and compassionate to one another...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Ephesians 4:32</cite>
+                  </blockquote>
+                </div>
+              </div>
+
+              <!-- Justice Verses -->
+              <div>
+                <h4 class="font-semibold text-blue-700 mb-4 flex items-center">
+                  <i class="fas fa-balance-scale mr-2"></i>
+                  Verses on Justice
+                </h4>
+                <div class="space-y-3">
+                  <blockquote class="border-l-4 border-blue-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Micah 6:8</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-blue-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Speak up for those who cannot speak for themselves, for the rights of all who are destitute...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Proverbs 31:8-9</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-blue-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Is not this the kind of fasting I have chosen: to loose the chains of injustice...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Isaiah 58:6</cite>
+                  </blockquote>
+                </div>
+              </div>
+
+              <!-- Stewardship Verses -->
+              <div>
+                <h4 class="font-semibold text-amber-700 mb-4 flex items-center">
+                  <i class="fas fa-coins mr-2"></i>
+                  Verses on Stewardship
+                </h4>
+                <div class="space-y-3">
+                  <blockquote class="border-l-4 border-amber-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;The earth is the Lord&#39;s, and everything in it...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Psalm 24:1</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-amber-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Each of you should use whatever gift you have received to serve others...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— 1 Peter 4:10</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-amber-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;Whoever is faithful in very little is also faithful in much...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Luke 16:10</cite>
+                  </blockquote>
+                </div>
+              </div>
+
+              <!-- Empowerment Verses -->
+              <div>
+                <h4 class="font-semibold text-purple-700 mb-4 flex items-center">
+                  <i class="fas fa-rocket mr-2"></i>
+                  Verses on Empowerment
+                </h4>
+                <div class="space-y-3">
+                  <blockquote class="border-l-4 border-purple-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;I have come that they may have life, and have it to the full...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— John 10:10</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-purple-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;For we are God&#39;s handiwork, created in Christ Jesus to do good works...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— Ephesians 2:10</cite>
+                  </blockquote>
+                  <blockquote class="border-l-4 border-purple-200 pl-3 text-sm text-gray-700 italic">
+                    &#34;For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline...&#34;
+                    <cite class="block text-xs mt-1 not-italic text-gray-600">— 2 Timothy 1:7</cite>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal and Regulatory Framework -->
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-12">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-8">Legal and Regulatory Framework</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">NGO Registration in Nigeria</h4>
+                <p class="text-sm text-gray-700 mb-4">
+                  Registration governed by Companies and Allied Matters Act (CAMA) 2020 as Incorporated Trustees.
+                </p>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span class="text-white text-xs font-bold">1</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Name Search &amp; Reservation</h5>
+                      <p class="text-xs text-gray-600">Corporate Affairs Commission (CAC) name availability check</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span class="text-white text-xs font-bold">2</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Publication of Notices</h5>
+                      <p class="text-xs text-gray-600">Notice in three national newspapers</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span class="text-white text-xs font-bold">3</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Constitution &amp; By-Laws</h5>
+                      <p class="text-xs text-gray-600">Draft governing documents compliant with CAMA</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span class="text-white text-xs font-bold">4</span>
+                    </div>
+                    <div>
+                      <h5 class="font-medium text-gray-900 text-sm">Application Submission</h5>
+                      <p class="text-xs text-gray-600">Complete application with all required documents</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Ongoing Compliance</h4>
+                <div class="space-y-4">
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Annual Returns</h5>
+                    <p class="text-sm text-gray-700">File annual returns with CAC including activities, finances, and trustees information</p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Tax Exemptions</h5>
+                    <p class="text-sm text-gray-700">Obtain tax exemption certificate from FIRS and file annual tax returns</p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Special Licenses</h5>
+                    <p class="text-sm text-gray-700">Secure permits from relevant ministries (Health, Education, etc.)</p>
+                  </div>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h5 class="font-medium text-gray-900 mb-2">Financial Reporting</h5>
+                    <p class="text-sm text-gray-700">Annual audited financial statements by qualified auditors</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Documents -->
+          <div class="bg-stone-50 p-8 rounded-xl">
+            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-8">Sample Documents and Templates</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Mission Statement Examples</h4>
+                <div class="space-y-4">
+                  <div class="bg-white p-4 rounded-lg border border-gray-100">
+                    <h5 class="font-medium text-gray-900 mb-2">World Vision</h5>
+                    <p class="text-sm text-gray-700 italic">&#34;To follow our Lord and Saviour Jesus Christ in working with the poor and oppressed to promote human transformation, seek justice, and bear witness to the good news of the Kingdom of God.&#34;</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border border-gray-100">
+                    <h5 class="font-medium text-gray-900 mb-2">The Salvation Army</h5>
+                    <p class="text-sm text-gray-700 italic">&#34;To preach the gospel of Jesus Christ and to meet human needs in His name without discrimination.&#34;</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-4">Budget Planning Template</h4>
+                <div class="bg-white p-4 rounded-lg border border-gray-100">
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-xs">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-2 py-1 text-left">Category</th>
+                          <th class="px-2 py-1 text-right">Year 1</th>
+                          <th class="px-2 py-1 text-right">Year 2</th>
+                          <th class="px-2 py-1 text-right">Year 3</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-2 py-1 font-medium text-green-700">Revenue</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                        </tr>
+                        <tr>
+                          <td class="px-2 py-1 font-medium text-red-700">Program Expenses</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                        </tr>
+                        <tr>
+                          <td class="px-2 py-1 font-medium text-blue-700">Administrative</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                        </tr>
+                        <tr>
+                          <td class="px-2 py-1 font-medium text-purple-700">Fundraising</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                          <td class="px-2 py-1 text-right">$XXX,XXX</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-amber-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-8 text-center">
+          <p class="text-amber-200">
+            <em>The People&#39;s Banquet: Serving Africa&#39;s vulnerable through faith, compassion, and empowerment.</em>
+          </p>
+          <p class="text-sm text-amber-300 mt-2">Rooted in Biblical principles • Committed to transformation • Dedicated to service</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Toggle TOC on mobile
+        const toc = document.getElementById('toc');
+        const tocToggle = document.getElementById('toc-toggle');
+        const tocClose = document.getElementById('toc-close');
+        
+        tocToggle.addEventListener('click', () => {
+            toc.classList.remove('-translate-x-full');
+            toc.classList.add('translate-x-0');
+        });
+        
+        tocClose.addEventListener('click', () => {
+            toc.classList.remove('translate-x-0');
+            toc.classList.add('-translate-x-full');
+        });
+        
+        // Close TOC when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 768 && !toc.contains(e.target) && !tocToggle.contains(e.target)) {
+                toc.classList.remove('translate-x-0');
+                toc.classList.add('-translate-x-full');
+            }
+        });
+        
+        // Initialize Mermaid
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                // Base colors with good contrast
+                primaryColor: '#ffffff',
+                primaryTextColor: '#1f2937',
+                primaryBorderColor: '#374151',
+                lineColor: '#6b7280',
+                
+                // Secondary colors for variety
+                secondaryColor: '#f8fafc',
+                secondaryTextColor: '#1f2937',
+                secondaryBorderColor: '#374151',
+                
+                // Tertiary colors
+                tertiaryColor: '#f1f5f9',
+                tertiaryTextColor: '#1f2937',
+                tertiaryBorderColor: '#374151',
+                
+                // Background and contrast
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondBkg: '#f8fafc',
+                tertiaryBkg: '#f1f5f9',
+                
+                // Text contrast
+                textColor: '#1f2937',
+                nodeTextColor: '#1f2937',
+                edgeLabelBackground: 'rgba(255, 255, 255, 0.9)',
+                
+                // Additional node colors with good contrast
+                cScale0: '#ffffff',
+                cScale1: '#f0f9ff',
+                cScale2: '#f0fdf4',
+                cScale3: '#fefce8',
+                cScale4: '#fdf2f8',
+                cScale5: '#faf5ff',
+                
+                // Ensure all text is dark for readability
+                cScale0Text: '#1f2937',
+                cScale1Text: '#1f2937',
+                cScale2Text: '#1f2937',
+                cScale3Text: '#1f2937',
+                cScale4Text: '#1f2937',
+                cScale5Text: '#1f2937',
+                
+                // Timeline colors
+                scaleLabelColor: '#1f2937',
+                scaleBkgColor: '#ffffff',
+                
+                // Gantt chart colors
+                ganttLabelColor: '#1f2937',
+                ganttLeftBorderColor: '#374151',
+                ganttRightBorderColor: '#374151'
+            },
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            },
+            sequence: {
+                wrap: true,
+                width: 150,
+                height: 65
+            },
+            timeline: {
+                padding: 20
+            },
+            gantt: {
+                leftPadding: 75,
+                rightPadding: 20
+            },
+            // Ensure proper sizing
+            maxTextSize: 20000000,
+            maxEdges: 200,
+            fontSize: 13,
+            fontFamily: 'Inter, sans-serif'
+        });
+        
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Initialize mermaid controls after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close TOC on mobile after clicking a link
+                    if (window.innerWidth < 768) {
+                        toc.classList.remove('translate-x-0');
+                        toc.classList.add('-translate-x-full');
+                    }
+                }
+            });
+        });
+        
+        // Highlight current section in TOC
+        function updateActiveTOC() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('bg-amber-100', 'text-amber-800');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('bg-amber-100', 'text-amber-800');
+                }
+            });
+        }
+        
+        // Update TOC on scroll
+        window.addEventListener('scroll', updateActiveTOC);
+        window.addEventListener('load', updateActiveTOC);
+    </script>
+  
+
+</body></html>

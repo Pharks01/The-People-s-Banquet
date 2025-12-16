@@ -748,7 +748,7 @@
             </div>
           </div>
 
-        <!-- Implementation Timeline -->
+       <!-- Implementation Timeline -->
 <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
   <h3 class="font-serif text-xl font-bold text-gray-900 mb-6">Implementation Timeline</h3>
 
@@ -762,31 +762,50 @@
       <button class="mermaid-control-btn fullscreen" title="全屏查看"><i class="fas fa-expand"></i></button>
     </div>
 
-    <!-- Actual Mermaid source -->
+    <!-- v9-compatible timeline source -->
     <div class="mermaid" id="timeline-chart">
       timeline
         title TPB Implementation Timeline
 
         section Phase 1 Foundation
-          Legal registration      :done,  p1a, 2025-01-01, 2025-02-15
-          Board formation         :done,  p1b, 2025-02-01, 2025-02-28
-          Community selection     :active,p1c, 2025-03-01, 2025-03-31
-          Stakeholder mapping     :       p1d, 2025-03-15, 2025-04-15
+          Legal registration      : 2025-01-01, 2025-02-15
+          Board formation         : 2025-02-01, 2025-02-28
+          Community selection     : 2025-03-01, 2025-03-31
+          Stakeholder mapping     : 2025-03-15, 2025-04-15
 
         section Phase 2 Pilot Launch
-          Activity planning       :p2a, 2025-04-01, 2025-04-30
-          Partner agreements      :p2b, 2025-04-15, 2025-05-15
-          Service delivery        :p2c, 2025-05-01, 2025-08-31
-          Monitoring setup        :p2d, 2025-05-01, 2025-05-15
+          Activity planning       : 2025-04-01, 2025-04-30
+          Partner agreements      : 2025-04-15, 2025-05-15
+          Service delivery        : 2025-05-01, 2025-08-31
+          Monitoring setup        : 2025-05-01, 2025-05-15
 
         section Phase 3 Evaluation
-          Data collection         :p3a, 2025-09-01, 2025-10-31
-          Learning documentation  :p3b, 2025-10-01, 2025-11-15
-          Toolkit development     :p3c, 2025-11-01, 2025-11-30
-          Expansion planning      :p3d, 2025-11-15, 2025-12-31
+          Data collection         : 2025-09-01, 2025-10-31
+          Learning documentation  : 2025-10-01, 2025-11-15
+          Toolkit development     : 2025-11-01, 2025-11-30
+          Expansion planning      : 2025-11-15, 2025-12-31
     </div>
   </div>
 </div>
+
+<!-- force v9, render immediately -->
+<script>
+/* wipe any earlier mermaid global */
+window.mermaid = undefined;
+
+const s = document.createElement('script');
+s.src = 'https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js?x=' + Date.now();
+s.onload = () => {
+  window.mermaid.initialize({startOnLoad:false, theme:'base'});
+  const el = document.getElementById('timeline-chart');
+  if(!el) return;
+  el.classList.remove('mermaid');
+  void el.offsetWidth;
+  el.classList.add('mermaid');
+  window.mermaid.init(undefined, el);
+};
+document.head.appendChild(s);
+</script>
 
           <!-- Scaling Strategy -->
           <div class="bg-amber-50 p-8 rounded-xl">
